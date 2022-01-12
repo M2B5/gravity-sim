@@ -8,7 +8,6 @@ function setup() {
   cnv.position(500, 100);
 
   for (let i = 0; i < planetNum; i++) {
-
     let m = Math.floor(Math.random() * 15) + 5;
     let x = 0;
     let y = 0;
@@ -16,23 +15,20 @@ function setup() {
     let yc = Math.floor(Math.random() * 800);
     let d = m * 4;
     let r = random(255);
-    let g = random(100, 200);
-    let b = random(100);
+    let g = random(100);
+    let b = random(100, 200);
     let a = random(200, 255);
     let col = color(r, g, b, a);
 
-    planets.push(new planet(m, x, y, xc, yc, col, d,));
-
+    planets.push(new planet(m, x, y, xc, yc, col, d));
   }
 }
 
 function draw() {
-  background(0);
-  for(let j = 0; j < planetNum; j++){
-
+  background(0, 50);
+  for (let j = 0; j < planets.length; j++) {
     planets[j].calculate(j);
     planets[j].move();
     planets[j].render();
-
   }
 }
