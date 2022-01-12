@@ -115,6 +115,5 @@ class planet {
     ) {
       this.yVelocity *= -1;
     }
-
   }
 }
